@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/line_items_list_view_item_container"
+        style="@style/CardView"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/line_items_list_view_item_img"
+                android:layout_margin="@dimen/margin_5dp"
+                >
+            </ImageView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/line_items_list_view_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checked Shirts"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/textColor"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:textSize="@dimen/text_size_18sp"
+                custom:typeface="roboto_light.ttf"
+                android:layout_toRightOf="@id/line_items_list_view_item_img"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/line_items_list_view_item_qty_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_items_list_view_item_name"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:text="QTY : 1"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_15sp"
+                custom:typeface="roboto_light.ttf"
+                android:layout_toRightOf="@id/line_items_list_view_item_img"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/line_items_list_view_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 2699"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:textColor="@color/googleYellow"
+                android:layout_below="@id/line_items_list_view_item_qty_txt"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:textSize="@dimen/text_size_16sp"
+                custom:typeface="roboto_regular.ttf"
+                android:layout_toRightOf="@id/line_items_list_view_item_img"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <!-- horizontal divider -->
+            <View
+                android:id="@+id/line_items_list_view_action_divider"
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:layout_below="@id/line_items_list_view_item_img"
+                android:background="@color/rangeFilterBackground"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                >
+            </View>
+
+            <LinearLayout
+                android:id="@+id/line_items_list_view_actions_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_items_list_view_action_divider"
+                android:orientation="horizontal"
+                >
+                <com.vinsol.spree.views.CustomFontTextView
+                    android:id="@+id/line_items_list_view_edit_quantity"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/edit_quantity"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:paddingTop="@dimen/margin_15dp"
+                    android:paddingBottom="@dimen/margin_15dp"
+                    android:gravity="center"
+                    custom:typeface="roboto_bold.ttf"
+                    android:textAllCaps="true"
+                    >
+                </com.vinsol.spree.views.CustomFontTextView>
+
+                <View
+                    android:layout_width=".5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/textColorLight"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:layout_marginBottom="@dimen/margin_5dp"
+                    >
+                </View>
+
+                <com.vinsol.spree.views.CustomFontTextView
+                    android:id="@+id/line_items_list_view_remove"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/remove"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/margin_15dp"
+                    android:paddingBottom="@dimen/margin_15dp"
+                    custom:typeface="roboto_bold.ttf"
+                    android:textAllCaps="true"
+                    >
+                </com.vinsol.spree.views.CustomFontTextView>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/margin_5dp"
+        >
+    </LinearLayout>
+
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/line_items_list_view_item_out_of_stock"
+        android:textColor="@color/googleRed"
+        android:text="@string/out_of_stock"
+        android:textSize="@dimen/text_size_14sp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        custom:typeface="roboto_light.ttf"
+        android:visibility="gone"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+</LinearLayout>

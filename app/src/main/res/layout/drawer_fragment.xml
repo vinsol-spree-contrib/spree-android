@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:orientation="horizontal"
+        android:background="@color/googleBlue"
+        >
+        <com.balysv.materialmenu.MaterialMenuView
+            android:id="@+id/drawer_fragment_action"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            app:mm_color="@android:color/white"
+            app:mm_transformDuration="500"
+            app:mm_strokeWidth="2"
+            app:mm_scale="1"/>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/drawer_fragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_10dp"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_18sp"
+            android:textColor="@android:color/white"
+            android:text="@string/drawer_title_home"
+            app:typeface="roboto_light.ttf"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/drawer_fragment_pages_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ProgressBar
+            android:id="@+id/drawer_fragment_progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        <com.vinsol.spree.controllers.fragments.drawerFragment.DrawerPage
+            android:id="@+id/drawer_fragment_page_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:level="1"
+            />
+
+        <com.vinsol.spree.controllers.fragments.drawerFragment.DrawerPage
+            android:id="@+id/drawer_fragment_page_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:level="2"
+            />
+    </RelativeLayout>
+</LinearLayout>

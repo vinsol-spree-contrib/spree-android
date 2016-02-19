@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_address_container"
+    android:background="@android:color/white"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    >
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_address_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal"
+        >
+        <com.balysv.materialmenu.MaterialMenuView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_address_tab_bar_back_img"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1"
+            >
+        </com.balysv.materialmenu.MaterialMenuView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/fragment_address_tab_bar_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:textSize="@dimen/text_size_15sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <!-- View mode > No addresses stored container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/fragment_address_blank_container"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColor"
+            android:text="@string/blank_address_book"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:textSize="@dimen/text_size_15sp"
+            custom:typeface="roboto_light.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColorLight"
+            android:text="@string/blank_address_book_advise"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fragment_address_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_address_tab_bar"
+        android:dividerHeight="1dp"
+        android:choiceMode="singleChoice"
+        android:divider="@color/textColorLight"
+        android:visibility="gone"
+        >
+    </ListView>
+
+    <!-- Add edit address -->
+    <ScrollView
+        android:id="@+id/fragment_address_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_address_tab_bar"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:id="@+id/fragment_address_form_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_gravity="center_horizontal"
+                android:text="All fields are mandatory"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <!-- first Name -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_first_name_txt"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Last Name -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_last_name_txt"
+                    android:inputType="text"
+                    android:hint="Last Name"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- address Line 1 -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_line1_txt"
+                    android:hint="Address Line 1"
+                    android:inputType="text"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- address Line 2 -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_line2_txt"
+                    android:hint="Address Line 2"
+                    android:inputType="text"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- city -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_city_txt"
+                    android:hint="City"
+                    android:inputType="text"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_35dp"
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:layout_marginTop="@dimen/margin_35dp"
+                android:id="@+id/fragment_address_state_spinner"
+                android:visibility="visible"
+                android:prompt="@string/select_state"
+                >
+            </Spinner>
+
+            <!-- pincode  -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_pincode_txt"
+                    android:hint="Pincode"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/margin_35dp"
+                android:text="Minimum 5 digits"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <!-- phone  -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/fragment_address_phone_txt"
+                    android:hint="Phone"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_10sp"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/margin_35dp"
+                android:text="Minimum 10 digits"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <ImageButton
+                android:layout_width="125dp"
+                android:layout_height="35dp"
+                android:layout_margin="@dimen/margin_35dp"
+                android:layout_gravity="right"
+                android:id="@+id/fragment_address_save_btn"
+                android:background="@color/googleYellow"
+                android:src="@drawable/right_arrow_icon"
+                >
+            </ImageButton>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FAB -->
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        custom:fabSize="normal"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        android:id="@+id/fragment_address_fab"
+        custom:backgroundTint="@color/googleYellow"
+        custom:elevation="@dimen/margin_2dp"
+        android:src="@drawable/add_icon"
+        >
+    </android.support.design.widget.FloatingActionButton>
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

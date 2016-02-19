@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_payment_container"
+    android:background="@android:color/white"
+    android:clickable="true"
+    >
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_payment_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal"
+        >
+
+        <com.balysv.materialmenu.MaterialMenuView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_payment_tab_bar_back_img"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1"
+            >
+        </com.balysv.materialmenu.MaterialMenuView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/fragment_payment_tab_bar_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:textSize="@dimen/text_size_15sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <!-- View mode > No card stored container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/fragment_payment_blank_container"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColorLight"
+            android:text="@string/no_saved_cards"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:textSize="@dimen/text_size_15sp"
+            custom:typeface="roboto_light.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColorLight"
+            android:text="@string/no_saved_cards_message"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_payment_list_view"
+        android:layout_below="@id/fragment_payment_tab_bar"
+        android:dividerHeight="1dp"
+        android:choiceMode="singleChoice"
+        android:divider="@color/textColorLight"
+        android:visibility="gone"
+        >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/fragment_payment_form_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_payment_tab_bar"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <!-- Name On Card Edit text -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/EditText.TextInputLayout"
+            >
+            <com.vinsol.spree.views.CustomFontEditText
+                style="@style/EditText"
+                android:id="@+id/fragment_payment_name_txt"
+                android:hint="Name on card *"
+                android:inputType="text"
+                >
+            </com.vinsol.spree.views.CustomFontEditText>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Card Number Edit text -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/EditText.TextInputLayout"
+            >
+            <com.vinsol.spree.views.CustomFontEditText
+                style="@style/EditText"
+                android:id="@+id/fragment_payment_card_number_txt"
+                android:hint="Card Number *"
+                android:inputType="phone"
+                android:maxLength="19"
+                >
+            </com.vinsol.spree.views.CustomFontEditText>
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_payment_date_txt_container"
+            android:layout_marginLeft="@dimen/margin_35dp"
+            android:layout_marginRight="@dimen/margin_35dp"
+            android:layout_marginTop="@dimen/margin_35dp"
+            >
+            <com.vinsol.spree.views.CustomFontEditText
+                android:id="@+id/fragment_payment_month_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_box_icon"
+                android:hint="MM"
+                android:gravity="center"
+                android:maxLength="2"
+                android:inputType="number"
+                android:textColor="@color/textColorLight"
+                android:textColorHint="@color/textColorLight"
+                android:textSize="@dimen/text_size_18sp"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontEditText>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/fragment_payment_slash_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_toRightOf="@id/fragment_payment_month_txt"
+                android:text=" / "
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_20sp"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <com.vinsol.spree.views.CustomFontEditText
+                android:id="@+id/fragment_payment_year_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_box_icon"
+                android:hint="YYYY"
+                android:layout_toRightOf="@id/fragment_payment_slash_txt"
+                android:gravity="center"
+                android:maxLength="4"
+                android:inputType="number"
+                android:textColor="@color/textColorLight"
+                android:textColorHint="@color/textColorLight"
+                android:textSize="@dimen/text_size_18sp"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontEditText>
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/fragment_payment_save_btn"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/margin_35dp"
+            android:background="@color/googleYellow"
+            android:src="@drawable/right_arrow_icon"
+            >
+        </ImageButton>
+    </LinearLayout>
+
+    <!-- FAB -->
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        custom:fabSize="normal"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        android:id="@+id/fragment_payment_fab"
+        custom:backgroundTint="@color/googleYellow"
+        custom:elevation="@dimen/margin_2dp"
+        android:src="@drawable/add_icon"
+        >
+    </android.support.design.widget.FloatingActionButton>
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

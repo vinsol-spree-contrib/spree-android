@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_profile_container"
+    >
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_profile_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.balysv.materialmenu.MaterialMenuView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_profile_tab_bar_back_img"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1" />
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/fragment_profile_tab_bar_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Login/Signup"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:textSize="@dimen/text_size_18sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/profile_logged_out_view"
+        android:id="@+id/fragment_profile_user_logged_out_container"
+        android:layout_below="@id/fragment_profile_tab_bar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="visible"/>
+    <include layout="@layout/profile_logged_in_view"
+        android:id="@+id/fragment_profile_user_logged_in_container"
+        android:layout_below="@id/fragment_profile_tab_bar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="gone"/>
+    <include layout="@layout/profile_edit_view"
+        android:id="@+id/fragment_profile_user_edit_container"
+        android:layout_below="@id/fragment_profile_tab_bar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="gone"/>
+
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

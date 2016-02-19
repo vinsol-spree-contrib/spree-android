@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/filter_single_select_container">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/filter_single_select_radio_btn"/>
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/filter_single_select_radio_btn_txt"
+        android:layout_marginLeft="@dimen/margin_14dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/text_size_12sp"
+        custom:typeface="roboto_regular.ttf"/>
+</LinearLayout>

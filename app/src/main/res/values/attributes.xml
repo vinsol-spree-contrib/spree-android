@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomFontTypeface">
+        <attr name="typeface" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="DrawerPage">
+        <attr name="level" format="integer"/>
+    </declare-styleable>
+</resources>

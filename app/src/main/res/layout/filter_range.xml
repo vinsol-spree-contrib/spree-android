@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_range_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <!-- triangle -->
+    <ImageView
+        android:id="@+id/filter_range_price_callout_triangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/filter_callout_triangle"
+        android:layout_marginBottom="-1dp"
+        >
+    </ImageView>
+
+    <!-- callout main body -->
+    <LinearLayout
+        android:id="@+id/filter_range_price_callout_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filter_range_price_callout_triangle"
+        android:background="@drawable/filter_callout_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/filter_range_price_callout_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="$3000 - $4500"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_11sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_marginLeft="@dimen/margin_12dp"
+            android:layout_marginRight="@dimen/margin_12dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+
+
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+    </LinearLayout>
+
+</RelativeLayout>

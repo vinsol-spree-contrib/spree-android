@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBackground"
+    >
+
+    <!-- Tab bar layout -->
+    <RelativeLayout
+        android:id="@+id/fragment_product_detail_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        >
+
+        <!-- material menu -->
+        <com.balysv.materialmenu.MaterialMenuView
+            android:id="@+id/fragment_product_detail_tab_bar_back_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1"
+            >
+        </com.balysv.materialmenu.MaterialMenuView>
+
+        <!-- app icon -->
+        <ImageView
+            android:id="@+id/fragment_product_detail_tab_bar_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/dashboard_icon"
+            android:layout_toRightOf="@id/fragment_product_detail_tab_bar_back_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            >
+        </ImageView>
+
+        <!-- share icon -->
+        <ImageView
+            android:id="@+id/fragment_product_detail_tab_bar_share_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/share_icon"
+            android:layout_toLeftOf="@+id/fragment_product_list_tab_bar_add_to_wishlist_img"
+            android:layout_marginRight="@dimen/margin_20dp"
+            >
+        </ImageView>
+
+        <!-- add to wish list icon -->
+        <ImageView
+            android:id="@id/fragment_product_list_tab_bar_add_to_wishlist_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_to_wishlist_icon"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/fragment_product_detail_tab_bar_search_img"
+            android:layout_marginRight="@dimen/margin_20dp"
+            >
+        </ImageView>
+
+        <!-- search icon -->
+        <ImageView
+            android:id="@id/fragment_product_detail_tab_bar_search_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_tab_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_20dp"
+            >
+        </ImageView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_below="@id/fragment_product_detail_tab_bar"
+        android:overScrollMode="never"
+        >
+        <!-- Single child of scroll view -->
+        <LinearLayout
+            android:id="@+id/fragment_product_detail_scroll_view_child_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            <!-- Banners view pager -->
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/fragment_product_detail_images_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                >
+            </com.daimajia.slider.library.SliderLayout>
+            <!-- view pager page selected markers parent -->
+            <LinearLayout
+                android:id="@+id/fragment_product_detail_product_images_view_pager_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:orientation="horizontal"
+                >
+            </LinearLayout>
+
+            <!-- product name -->
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/fragment_product_detail_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:textSize="@dimen/text_size_15sp"
+                custom:typeface="roboto_light.ttf"
+                android:text="Checked Shirts"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+
+            <!-- price top divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height_.5"
+                android:background="@color/divider_color"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                >
+            </View>
+
+            <!-- price and review block -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/price_and_review_block_height"
+                android:orientation="horizontal"
+                >
+                <!-- price block -->
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+
+                    <!-- Price -->
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:id="@+id/fragment_product_detail_item_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/googleYellow"
+                        android:textSize="@dimen/text_size_18sp"
+                        custom:typeface="roboto_regular.ttf"
+                        android:text="Rs 1999"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+
+                    <!-- vertical divider -->
+                    <View
+                        android:layout_width="1dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:layout_marginBottom="@dimen/margin_5dp"
+                        android:layout_alignParentRight="true"
+                        >
+                    </View>
+                </RelativeLayout>
+
+                <!-- Review layout -->
+                <RelativeLayout
+                    android:id="@+id/fragment_products_detail_view_review_container"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <include
+                        android:id="@+id/fragment_product_detail_rating_stars"
+                        layout="@layout/rating_stars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        >
+                    </include>
+
+                    <!-- rating count -->
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:id="@+id/fragment_product_detail_rating_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:layout_marginTop="18dip"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text_size_10sp"
+                        custom:typeface="roboto_regular.ttf"
+                        android:text="(16)"
+                        android:layout_toRightOf="@id/fragment_product_detail_rating_stars"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+
+                    <!-- review count -->
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:id="@+id/fragment_product_detail_review_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_10dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text_size_15sp"
+                        custom:typeface="roboto_regular.ttf"
+                        android:text="4 REVIEWS"
+                        android:layout_below="@id/fragment_product_detail_rating_stars"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+
+                    <!-- right carrot -->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/right_carrot"
+                        android:layout_marginRight="@dimen/margin_20dp"
+                        >
+                    </ImageView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- price bottom divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height_.5"
+                android:background="@color/divider_color"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                >
+            </View>
+
+            <!-- Layout for options -->
+            <LinearLayout
+                android:id="@+id/fragment_product_detail_layout_for_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            </LinearLayout>
+
+            <!-- Product description header -->
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/fragment_product_detail_description_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_16sp"
+                custom:typeface="roboto_regular.ttf"
+                android:text="@string/description"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <!-- Product description value -->
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/fragment_product_detail_description_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size_12sp"
+                custom:typeface="roboto_regular.ttf"
+                android:text="@string/description"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <!-- Layout for specification -->
+            <LinearLayout
+                android:id="@+id/fragment_product_detail_layout_for_specification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- add to cart  -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_to_cart"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        custom:fabSize="normal"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        custom:backgroundTint="@color/googleBlue"
+        custom:elevation="@dimen/margin_2dp"
+        android:src="@drawable/add_to_cart_icon"
+        >
+    </android.support.design.widget.FloatingActionButton>
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:layout_marginTop="@dimen/margin_5dp"
+    android:layout_marginLeft="@dimen/margin_5dp"
+    android:layout_marginRight="@dimen/margin_5dp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/products_card_view_item_container"
+    custom:cardElevation="@dimen/margin_3dp"
+    custom:cardCornerRadius="0dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:id="@+id/products_card_view_item_img"
+        android:src="@drawable/product1"
+        android:scaleType="centerCrop"
+        >
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/products_card_view_item_txt_container"
+        android:layout_gravity="bottom"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checked Shirts"
+            android:id="@+id/products_card_view_item_name"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="200dp"
+            android:layout_marginTop="@dimen/margin_2dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_15sp"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <include
+            android:id="@+id/products_card_view_item_rating_container"
+            layout="@layout/rating_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/products_card_view_item_name"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            >
+        </include>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs 2699"
+            android:id="@+id/products_card_view_item_price"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:textColor="@color/googleYellow"
+            android:layout_below="@id/products_card_view_item_rating_container"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:textSize="@dimen/text_size_16sp"
+            custom:typeface="roboto_regular.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wishlist_icon"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:id="@+id/products_card_view_item_wishlist_img"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_alignParentRight="true"
+            >
+        </ImageView>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

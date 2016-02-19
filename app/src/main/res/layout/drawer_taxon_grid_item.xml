@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <com.andexert.library.RippleView
+        android:id="@+id/drawer_taxon_grid_item_ripple_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:id="@+id/drawer_taxon_grid_circular_item_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:id="@+id/drawer_taxon_grid_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/drawer_taxon_grid_item_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true" />
+
+                <com.vinsol.spree.views.CustomFontTextView
+                    android:id="@+id/drawer_taxon_grid_item_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/drawer_taxon_grid_item_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    custom:typeface="roboto_regular.ttf"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_14sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.andexert.library.RippleView>
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="31dp"
+    android:layout_marginRight="@dimen/margin_10dp"
+    android:layout_marginLeft="@dimen/margin_10dp"
+    android:background="@drawable/product_detail_spec_list_item_white_bg"
+    >
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/products_detail_specification_key_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center_vertical"
+        android:text="General Specification"
+        android:textColor="@color/textColor"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_12sp"
+        custom:typeface="roboto_light.ttf"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <View
+        android:layout_width="@dimen/divider_height_.5"
+        android:layout_height="match_parent"
+        android:background="@color/divider_color"
+        >
+    </View>
+
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/products_detail_specification_value_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:gravity="center_vertical"
+        android:text="General Specification"
+        android:textColor="@color/textColor"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_12sp"
+        custom:typeface="roboto_light.ttf"
+        android:paddingLeft="@dimen/margin_20dp"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+</LinearLayout>

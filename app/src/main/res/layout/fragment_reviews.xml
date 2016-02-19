@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_reviews_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardViewBackground"
+    >
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_reviews_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal"
+        >
+
+        <com.balysv.materialmenu.MaterialMenuView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_reviews_tab_bar_back_img"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1"
+            >
+        </com.balysv.materialmenu.MaterialMenuView>
+
+        <!-- title -->
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:text="@string/reviews_and_ratings"
+            android:textSize="@dimen/text_size_15sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+    </LinearLayout>
+    <!-- View mode > No Reviews available container -->
+    <LinearLayout
+        android:id="@+id/fragment_reviews_blank_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColorLight"
+            android:text="@string/no_reviews"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fragment_reviews_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_reviews_tab_bar"
+        android:dividerHeight="1dp"
+        android:divider="@color/transparent"
+        android:visibility="gone"
+        android:listSelector="@color/transparent"
+        >
+    </ListView>
+
+    <!-- FAB -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fragment_reviews_fab"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        custom:fabSize="normal"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        custom:backgroundTint="@color/googleYellow"
+        custom:elevation="@dimen/margin_2dp"
+        android:src="@drawable/add_icon"
+        >
+    </android.support.design.widget.FloatingActionButton>
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

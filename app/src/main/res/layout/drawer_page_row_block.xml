@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <ImageView
+            android:id="@+id/drawer_page_row_block_chevron"
+            android:layout_width="@dimen/margin_50dp"
+            android:layout_height="@dimen/margin_50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/chevron_blue_down"
+            />
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/drawer_page_row_block_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/drawer_page_row_block_chevron"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textSize="@dimen/text_size_22sp"
+            android:textColor="@color/material_grey_850"
+            android:text="@string/drawer_title_home"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:typeface="roboto_light.ttf"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/drawer_page_row_block_items_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/drawer_page_row_block_expansion_handle"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#f8f8f8"
+        >
+        <ImageView
+            android:id="@+id/drawer_page_row_block_handle_chevron"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/chevron_blue_down"
+            />
+    </RelativeLayout>
+</LinearLayout>

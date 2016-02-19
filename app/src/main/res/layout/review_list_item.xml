@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <!-- user name -->
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/reviews_list_item_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="by someone"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_13sp"
+        custom:typeface="roboto_light.ttf"
+        android:layout_toLeftOf="@+id/reviews_list_item_date"
+
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- Review date -->
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/reviews_list_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6 May 2015"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:textColor="@color/textColor"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_13sp"
+        custom:typeface="roboto_light.ttf"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- rating stars -->
+    <include
+        layout="@layout/rating_stars"
+        android:id="@+id/review_list_item_rating_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_below="@id/reviews_list_item_user_name"
+        >
+    </include>
+
+    <!-- review title -->
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/review_list_item_review_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="product is good"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_12sp"
+        custom:typeface="roboto_regular.ttf"
+        android:layout_below="@+id/review_list_item_rating_stars"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- review -->
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/review_list_item_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="product is good"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_12sp"
+        custom:typeface="roboto_light.ttf"
+        android:layout_below="@+id/review_list_item_review_title"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height_.5"
+        android:background="@color/divider_color"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_below="@id/review_list_item_review"
+        >
+    </View>
+
+</RelativeLayout>

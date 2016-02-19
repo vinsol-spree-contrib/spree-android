@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/drawer_page_block_item_height"
+    android:paddingBottom="@dimen/margin_10dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        >
+        <ImageView
+            android:id="@+id/drawer_page_block_item_image"
+            android:layout_width="@dimen/margin_40dp"
+            android:layout_height="@dimen/margin_40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/placeholder"
+            />
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/drawer_page_block_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textColor="@color/material_grey_800"
+            android:text="@string/drawer_title_home"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:typeface="roboto_light.ttf"/>
+    </LinearLayout>
+</RelativeLayout>

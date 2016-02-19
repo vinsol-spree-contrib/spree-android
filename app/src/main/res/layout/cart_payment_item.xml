@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_payment_item_container"
+    style="@style/CardView"
+    android:layout_marginBottom="@dimen/margin_5dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/cart_payment_item_header_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Info"
+            custom:typeface="roboto_medium.ttf"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_size_18sp"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/cart_payment_item_card_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXXX-XXXX-XXXX-4567"
+            android:layout_below="@id/cart_payment_item_header_txt"
+            android:layout_margin="@dimen/margin_10dp"
+            custom:typeface="roboto_light.ttf"
+            android:layout_gravity="top"
+            android:textSize="@dimen/text_size_15sp"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/cart_payment_item_card_type_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VISA"
+            android:layout_below="@id/cart_payment_item_card_txt"
+            android:layout_margin="@dimen/margin_10dp"
+            custom:typeface="roboto_light.ttf"
+            android:layout_gravity="top"
+            android:textSize="@dimen/text_size_15sp"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <RelativeLayout
+            android:id="@+id/cart_payment_item_edit_img_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/cart_payment_item_edit_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:src="@drawable/address_edit_icon"
+                >
+            </ImageView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

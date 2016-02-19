@@ -1,0 +1,46 @@
+<resources>
+    <dimen name="tab_bar_height">57dp</dimen>
+    <dimen name="navigation_drawer_left_margin">-64dp</dimen>
+    <dimen name="navigation_drawer_taxon_row_height">65dp</dimen>
+
+    <dimen name="drawer_page_block_item_height">100dp</dimen>
+
+    <!-- margins -->
+    <dimen name="margin_120dp">120dp</dimen>
+    <dimen name="margin_80dp">80dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="margin_45dp">45dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_35dp">35dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_3dp">3dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <!-- Text sizes -->
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_19sp">19sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_13sp">13sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_11sp">11sp</dimen>
+    <dimen name="text_size_10sp">10sp</dimen>
+
+    <!-- divider height -->
+    <dimen name="divider_height_.5">.5dp</dimen>
+
+    <dimen name="price_and_review_block_height">72dip</dimen>
+
+    <dimen name="rating_bar_width">150dip</dimen>
+</resources>

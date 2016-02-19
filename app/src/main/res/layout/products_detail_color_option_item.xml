@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="37dip"
+    android:layout_height="37dip"
+    android:layout_margin="@dimen/margin_10dp"
+    android:background="@android:color/transparent"
+    >
+    <View
+        android:id="@+id/products_detail_color_option_value"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_centerInParent="true"
+        android:background="@android:color/black"
+        >
+    </View>
+</RelativeLayout>

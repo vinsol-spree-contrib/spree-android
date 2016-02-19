@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_header_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_5dp"
+    android:layout_marginBottom="@dimen/margin_5dp"
+    >
+    <com.vinsol.spree.views.CustomFontTextView
+        android:id="@+id/filter_header_name_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:typeface="roboto_medium.ttf"
+        android:textColor="@color/googleYellow"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/text_size_16sp"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filter_header_expand_collapse_img"
+        android:src="@drawable/filters_expand_collapse_icon"
+        android:layout_alignParentRight="true"
+        android:rotation="180"
+        android:layout_centerVertical="true"
+        >
+    </ImageView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/googleYellow"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/filter_header_expand_collapse_img"
+        android:layout_toRightOf="@id/filter_header_name_txt"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        >
+    </View>
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/googleBlue"
+    tools:context=".controllers.SplashActivity"
+    android:id="@+id/activity_splash_container"
+    android:keepScreenOn="true">
+
+
+    <ImageView
+        android:id="@+id/activity_splash_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/splash_icon"
+        android:layout_gravity="center" />
+
+    <ProgressBar
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/activity_splash_pb"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:indeterminate="true"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:visibility="gone"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addresses_list_view_item_container">
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresses_list_view_item_name"
+        android:layout_marginLeft="@dimen/margin_25dp"
+        custom:typeface="roboto_regular.ttf"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:textSize="@dimen/text_size_18sp"
+        android:textColor="@color/textColor"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresses_list_view_item_address"
+        android:layout_marginLeft="@dimen/margin_25dp"
+        custom:typeface="roboto_light.ttf"
+        android:layout_below="@id/addresses_list_view_item_name"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_15sp"
+        android:textColor="@color/textColor"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresses_list_view_item_phone"
+        android:layout_marginLeft="@dimen/margin_25dp"
+        custom:typeface="roboto_light.ttf"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        android:layout_below="@id/addresses_list_view_item_address"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:textSize="@dimen/text_size_15sp"
+        android:textColor="@color/textColor"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresses_list_view_item_option"
+        android:layout_alignParentRight="true"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/list_item_option_icon"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            >
+        </ImageView>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresses_list_view_item_selected"
+        android:src="@drawable/tick"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:layout_below="@id/addresses_list_view_item_option"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        >
+    </ImageView>
+</RelativeLayout>

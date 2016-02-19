@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The main scroll view -->
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_dashboard_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:choiceMode="singleChoice"
+    android:overScrollMode="never">
+    <!-- Single child of scroll view -->
+    <LinearLayout
+        android:id="@+id/fragment_dashboard_scroll_view_child_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <!-- Banners view pager -->
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/fragment_dashboard_current_offers_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            >
+        </com.daimajia.slider.library.SliderLayout>
+
+        <!-- view pager page selected markers parent -->
+        <LinearLayout
+            android:id="@+id/fragment_dashboard_current_offers_view_pager_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:orientation="horizontal"
+            >
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

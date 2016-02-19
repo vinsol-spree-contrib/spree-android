@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_orders_container"
+    android:background="#ffeeeeee"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_orders_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal">
+
+        <com.balysv.materialmenu.MaterialMenuView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_orders_tab_bar_back_img"
+            android:layout_gravity="center"
+            custom:mm_color="@android:color/white"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            custom:mm_transformDuration="500"
+            custom:mm_strokeWidth="2"
+            custom:mm_scale="1" />
+
+
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/fragment_orders_tab_bar_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/orders"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:textSize="@dimen/text_size_15sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"/>
+
+    </LinearLayout>
+    <!-- View mode > No order container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/fragment_orders_blank_container"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/textColorLight"
+            android:text="@string/no_orders"/>
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="200dp"
+            android:background="@drawable/filters_apply_button"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="@string/start_shopping"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_13sp"
+            android:id="@+id/fragment_orders_start_shopping_btn"
+            custom:typeface="roboto_regular.ttf"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_orders_list_view"
+        android:layout_below="@id/fragment_orders_tab_bar"
+        android:dividerHeight="1dp"
+        android:choiceMode="singleChoice"
+        android:divider="@color/textColorLight"
+        android:visibility="gone"
+        android:background="#ffeeeeee"
+        />
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:fitsSystemWindows="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/home_pager_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/home_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_scrollFlags="scroll|snap"
+                >
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/home_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_title_bar"
+                style="@style/MyCustomTabLayout"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                >
+            </android.support.design.widget.TabLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/home_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/home_tab_layout"
+            app:layout_behavior="com.vinsol.spree.viewhelpers.CustomScrollingViewBehavior"
+            >
+        </android.support.v4.view.ViewPager>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!-- fragment container -->
+    <FrameLayout
+        android:id="@+id/home_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+
+    <!--Check out bar-->
+    <LinearLayout
+        android:id="@+id/home_checkout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:weightSum="6"
+        android:orientation="horizontal"
+        android:background="@drawable/checkout_bar_background"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart_selected"
+            android:layout_weight="1"
+            >
+        </ImageView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_checkout_bar_total_items_txt"
+            android:text="Items 0"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_14sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_medium.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_checkout_bar_total_price_txt"
+            android:text="@string/go_to_cart"
+            android:layout_weight="2"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_14sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_medium.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/up_arrow_icon"
+            android:layout_weight="1"
+            >
+        </ImageView>
+    </LinearLayout>
+    </RelativeLayout>
+    <!-- The drawer layout -->
+    <FrameLayout
+        android:id="@+id/home_drawer_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/navigation_drawer_left_margin"
+        android:fitsSystemWindows="true"
+        >
+    </FrameLayout>
+</android.support.v4.widget.DrawerLayout>

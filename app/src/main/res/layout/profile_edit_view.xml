@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/profile_edit_container"
+    android:background="@android:color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:background="@color/googleBlue"
+        android:id="@+id/profile_edit_user_pic_container"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_edit_user_name_txt"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_18sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            custom:typeface="roboto_medium.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/profile_edit_user_img"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/profile_edit_user_name_txt"
+            >
+        </ImageView>
+    </RelativeLayout>
+
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_edit_user_email_txt"
+        android:textColor="@color/googleBlue"
+        android:layout_below="@id/profile_edit_user_pic_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:textSize="@dimen/text_size_18sp"
+        custom:typeface="roboto_light.ttf"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- full name edit text -->
+    <android.support.design.widget.TextInputLayout
+        style="@style/EditText.TextInputLayout"
+        android:id="@+id/fragment_profile_full_name_text_input"
+        android:layout_below="@id/profile_edit_user_email_txt"
+        >
+        <com.vinsol.spree.views.CustomFontEditText
+            style="@style/EditText"
+            android:id="@+id/profile_edit_user_name"
+            android:inputType="text"
+            android:hint="@string/full_name"
+            >
+        </com.vinsol.spree.views.CustomFontEditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- phone edit text -->
+    <android.support.design.widget.TextInputLayout
+        style="@style/EditText.TextInputLayout"
+        android:id="@+id/fragment_profile_phone_text_input"
+        android:layout_below="@id/fragment_profile_full_name_text_input"
+        >
+        <com.vinsol.spree.views.CustomFontEditText
+            style="@style/EditText"
+            android:id="@+id/profile_edit_user_number"
+            android:inputType="number"
+            android:hint="@string/phone"
+            android:maxLength="10"
+            >
+        </com.vinsol.spree.views.CustomFontEditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_profile_phone_text_input"
+        android:layout_marginLeft="@dimen/margin_35dp"
+        android:layout_marginRight="@dimen/margin_35dp"
+        android:layout_marginTop="@dimen/margin_35dp"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_password"
+            android:layout_centerVertical="true"
+            android:id="@+id/profile_edit_user_change_pwd_btn"
+            android:textSize="@dimen/text_size_15sp"
+            android:textColor="@color/googleBlue"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/profile_edit_user_save_btn"
+            android:background="@color/googleYellow"
+            android:src="@drawable/right_arrow_icon"
+            >
+        </ImageButton>
+    </RelativeLayout>
+</RelativeLayout>

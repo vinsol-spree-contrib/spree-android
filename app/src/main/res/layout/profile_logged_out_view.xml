@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/profile_logged_out_container"
+    >
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:overScrollMode="never"
+        android:id="@+id/profile_login_section_scroll_view"
+        android:layout_above="@+id/profile_social_login_section"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/profile_login_section_scroll_view_child_container"
+            android:paddingBottom="@dimen/margin_35dp"
+            >
+
+            <!-- email edit text -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/profile_email_txt"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Password edit text -->
+            <android.support.design.widget.TextInputLayout
+                style="@style/EditText.TextInputLayout"
+                >
+                <com.vinsol.spree.views.CustomFontEditText
+                    style="@style/EditText"
+                    android:id="@+id/profile_pwd_txt"
+                    android:inputType="textPassword"
+                    android:hint="@string/password"
+                    >
+                </com.vinsol.spree.views.CustomFontEditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/profile_login_btn"
+                android:layout_marginTop="@dimen/margin_35dp"
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:layout_marginRight="@dimen/margin_35dp"
+                android:background="@color/googleBlue"
+                android:textColor="@android:color/white"
+                android:text="@string/login"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_15sp"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:text="@string/forgot_password"
+                android:id="@+id/profile_forgot_pwd_btn"
+                android:textSize="@dimen/text_size_15sp"
+                android:textColor="#707C76"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_forgot_pwd_btn"
+                >
+                <com.vinsol.spree.views.CustomFontTextView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="or"
+                    android:gravity="center"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:layout_marginTop="@dimen/margin_30dp"
+                    android:id="@+id/profile_or_txt"
+                    custom:typeface="roboto_light.ttf"
+                    >
+                </com.vinsol.spree.views.CustomFontTextView>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    android:layout_marginTop="@dimen/margin_40dp"
+                    android:layout_marginLeft="@dimen/margin_35dp"
+                    android:layout_toLeftOf="@id/profile_or_txt"
+                    >
+                </View>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    android:layout_marginTop="@dimen/margin_40dp"
+                    android:layout_marginRight="@dimen/margin_35dp"
+                    android:layout_toRightOf="@id/profile_or_txt"
+                    >
+                </View>
+            </RelativeLayout>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/profile_signup_btn"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:layout_marginLeft="@dimen/margin_35dp"
+                android:layout_marginRight="@dimen/margin_35dp"
+                android:background="@color/googleBlue"
+                android:textColor="@android:color/white"
+                android:text="@string/signup"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_15sp"
+                custom:typeface="roboto_light.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <!-- social login footer -->
+    <RelativeLayout
+        android:id="@+id/profile_social_login_section"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cardViewBackground">
+
+        <!-- shadow -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/profile_social_login_section_shadow"
+            android:background="@color/rangeFilterBackground"
+            >
+        </View>
+
+        <!-- facebook icon -->
+        <ImageView
+            android:id="@+id/profile_facebook_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            >
+        </ImageView>
+
+        <!-- login with facebook text -->
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/profile_facebook_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/login_with_facebook"
+            android:textSize="@dimen/text_size_13sp"
+            android:textColor="@color/textColor"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_toRightOf="@id/profile_facebook_img"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <!-- divider -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#979797"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:layout_marginBottom="@dimen/margin_15dp"
+            >
+        </View>
+
+        <!-- login with google text -->
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_13sp"
+            android:text="@string/login_with_google"
+            android:id="@+id/profile_google_txt"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_alignParentRight="true"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <!-- google plus icon -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google_plus_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_toLeftOf="@id/profile_google_txt"
+            android:id="@+id/profile_google_img"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            >
+        </ImageView>
+    </RelativeLayout>
+</RelativeLayout>

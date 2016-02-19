@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_logged_in_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardViewBackground"
+    >
+
+    <ScrollView
+        android:id="@+id/profile_logged_in_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:id="@+id/profile_logged_in_scroll_view_child_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    android:id="@+id/profile_user_pic_container"
+                    >
+                    <!-- user image -->
+                    <ImageView
+                        android:id="@+id/profile_user_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_15dp"
+                        android:src="@drawable/profile_pic_placeholder"
+                        >
+                    </ImageView>
+
+                    <!-- user name -->
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:id="@+id/profile_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer Name"
+                        android:textColor="@color/textColorLight"
+                        custom:typeface="roboto_medium.ttf"
+                        android:textSize="@dimen/text_size_18sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/margin_10dp"
+                        android:layout_marginTop="@dimen/margin_10dp"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+
+                    <!-- edit icon -->
+                    <RelativeLayout
+                        android:id="@+id/profile_edit_img_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        >
+                        <ImageView
+                            android:id="@+id/profile_edit_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/address_edit_icon"
+                            android:layout_marginBottom="@dimen/margin_12dp"
+                            android:layout_marginRight="@dimen/margin_10dp"
+                            >
+                        </ImageView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- my orders card -->
+                <android.support.v7.widget.CardView
+                    style="@style/CardView"
+                    android:id="@+id/profile_user_orders_card"
+                    android:layout_marginTop="@dimen/margin_20dp"
+                    custom:cardElevation="1dp"
+                    >
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_orders"
+                        custom:typeface="roboto_light.ttf"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:layout_marginRight="@dimen/margin_10dp"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+                </android.support.v7.widget.CardView>
+
+                <!-- my addresses card -->
+                <android.support.v7.widget.CardView
+                    style="@style/CardView"
+                    android:id="@+id/profile_user_addresses_card"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    custom:cardElevation="1dp"
+                    >
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_addresses"
+                        custom:typeface="roboto_light.ttf"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:layout_marginRight="@dimen/margin_10dp"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+                </android.support.v7.widget.CardView>
+
+                <!-- saved cards -->
+                <android.support.v7.widget.CardView
+                    style="@style/CardView"
+                    android:id="@+id/profile_user_payment_card"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    custom:cardElevation="1dp"
+                    >
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/saved_cards"
+                        custom:typeface="roboto_light.ttf"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:layout_marginRight="@dimen/margin_10dp"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+                </android.support.v7.widget.CardView>
+
+                <!-- wishlist -->
+                <android.support.v7.widget.CardView
+                    style="@style/CardView"
+                    android:id="@+id/profile_user_wishlist_card"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    custom:cardElevation="1dp"
+                    >
+                    <com.vinsol.spree.views.CustomFontTextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_wishlist"
+                        custom:typeface="roboto_light.ttf"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:layout_marginRight="@dimen/margin_10dp"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        >
+                    </com.vinsol.spree.views.CustomFontTextView>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:id="@+id/profile_logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout_underlined"
+                android:textColor="@color/googleBlue"
+                android:textSize="@dimen/text_size_18sp"
+                custom:typeface="roboto_light.ttf"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

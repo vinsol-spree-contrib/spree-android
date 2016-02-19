@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardViewBackground"
+    android:orientation="vertical"
+    android:clickable="true"
+    >
+    <!-- Tab bar layout -->
+    <LinearLayout
+        android:id="@+id/fragment_cart_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar_height"
+        android:background="@color/googleBlue"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:id="@+id/fragment_cart_tab_bar_back_img_container"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_cart_tab_bar_back_img"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/down_arrow_icon"
+                >
+            </ImageView>
+        </RelativeLayout>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:id="@+id/fragment_cart_tab_bar_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cart"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:textSize="@dimen/text_size_18sp"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_light.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <!-- View mode > No cart items present container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/fragment_cart_blank_container"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        >
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18sp"
+            custom:typeface="roboto_regular.ttf"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:id="@+id/fragment_cart_blank_txt"
+            android:textColor="@color/textColorLight"
+            android:text="@string/blank_cart"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/filters_apply_button"
+            android:layout_height="40dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:text="@string/continue_shopping"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_13sp"
+            android:id="@+id/fragment_cart_blank_continue_shopping_btn"
+            custom:typeface="roboto_regular.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </LinearLayout>
+
+    <!-- Recycler view -->
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_below="@id/fragment_cart_tab_bar"
+        android:layout_above="@+id/fragment_cart_checkout_bar"
+        android:id="@+id/fragment_cart_recycler_view"
+        android:visibility="gone"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+    <!-- address view -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardViewBackground"
+        android:layout_below="@id/fragment_cart_tab_bar"
+        android:id="@+id/fragment_cart_address_container"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <include
+            layout="@layout/cart_address_item"
+            android:id="@+id/fragment_cart_address_card"
+            >
+        </include>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/filters_apply_button"
+            android:layout_height="40dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_below="@id/fragment_cart_address_card"
+            android:layout_centerHorizontal="true"
+            android:text="@string/continue_to_payment"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_13sp"
+            android:id="@+id/fragment_cart_address_to_payment_btn"
+            custom:typeface="roboto_regular.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </RelativeLayout>
+    
+    <!-- Payment view -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardViewBackground"
+        android:layout_below="@id/fragment_cart_tab_bar"
+        android:id="@+id/fragment_cart_payment_container"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <include
+            layout="@layout/cart_payment_item"
+            android:id="@+id/fragment_cart_payment_card"
+            >
+        </include>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/filters_apply_button"
+            android:layout_height="40dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_below="@id/fragment_cart_payment_card"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pay"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_13sp"
+            android:id="@+id/fragment_cart_payment_pay_btn"
+            custom:typeface="roboto_regular.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+    </RelativeLayout>
+
+    <!-- confirm view -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardViewBackground"
+        android:layout_below="@id/fragment_cart_tab_bar"
+        android:id="@+id/fragment_cart_confirm_container"
+        android:visibility="gone"
+        >
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_45dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/cardViewBackground"
+                android:id="@+id/fragment_cart_confirm_scroll_view_child_container"
+                >
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <!-- Confirm bar layout -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/fragment_cart_confirm_bar"
+            android:background="@drawable/checkout_bar_background"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:id="@+id/fragment_cart_confirm_bar_img"
+                android:src="@drawable/cart_selected"
+                >
+            </ImageView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_11sp"
+                android:id="@+id/fragment_cart_confirm_bar_total_items_txt"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:text="Total (0)"
+                android:layout_toRightOf="@id/fragment_cart_confirm_bar_img"
+                android:textColor="@android:color/white"
+                custom:typeface="roboto_medium.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_cart_confirm_bar_total_price_txt"
+                android:textSize="@dimen/text_size_14sp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:text="Rs 00.00"
+                android:layout_toRightOf="@id/fragment_cart_confirm_bar_img"
+                android:layout_below="@id/fragment_cart_confirm_bar_total_items_txt"
+                android:textColor="@android:color/white"
+                custom:typeface="roboto_regular.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:id="@+id/fragment_cart_confirm_bar_confirm_btn_container"
+                android:layout_alignParentRight="true"
+                >
+                <com.vinsol.spree.views.CustomFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/fragment_cart_confirm_bar_txt"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:text="confirm"
+                    android:textAllCaps="true"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:textColor="@android:color/white"
+                    custom:typeface="roboto_medium.ttf"
+                    >
+                </com.vinsol.spree.views.CustomFontTextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checkout_right_arrow"
+                    android:layout_marginLeft="@dimen/margin_5dp"
+                    android:layout_marginRight="@dimen/margin_15dp"
+                    android:id="@+id/fragment_cart_confirm_bar_arrow"
+                    >
+                </ImageView>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Checkout bar layout -->
+    <RelativeLayout
+        android:id="@+id/fragment_cart_checkout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/checkout_bar_background"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:id="@+id/fragment_cart_checkout_bar_img"
+            android:src="@drawable/cart_selected"
+            >
+        </ImageView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_11sp"
+            android:id="@+id/fragment_cart_checkout_bar_total_items_txt"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:text="Total (0)"
+            android:layout_toRightOf="@id/fragment_cart_checkout_bar_img"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_medium.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <com.vinsol.spree.views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_cart_checkout_bar_total_price_txt"
+            android:textSize="@dimen/text_size_14sp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_alignParentBottom="true"
+            android:text="Rs 00.00"
+            android:layout_toRightOf="@id/fragment_cart_checkout_bar_img"
+            android:textColor="@android:color/white"
+            custom:typeface="roboto_regular.ttf"
+            >
+        </com.vinsol.spree.views.CustomFontTextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/fragment_cart_checkout_bar_checkout_btn_container"
+            android:layout_alignParentRight="true"
+            >
+            <com.vinsol.spree.views.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/fragment_cart_checkout_bar_txt"
+                android:textSize="@dimen/text_size_14sp"
+                android:text="@string/checkout"
+                android:textAllCaps="true"
+                android:layout_marginRight="@dimen/margin_5dp"
+                android:textColor="@android:color/white"
+                custom:typeface="roboto_medium.ttf"
+                >
+            </com.vinsol.spree.views.CustomFontTextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/checkout_right_arrow"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:id="@+id/fragment_cart_checkout_bar_arrow"
+                >
+            </ImageView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Refresh view for onFailure cases -->
+    <com.vinsol.spree.views.CustomFontTextView
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@drawable/filters_apply_button"
+        android:layout_height="40dp"
+        android:layout_marginRight="@dimen/margin_35dp"
+        android:layout_marginLeft="@dimen/margin_35dp"
+        android:text="Refresh"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_13sp"
+        android:id="@+id/fragment_cart_refresh_btn"
+        custom:typeface="roboto_regular.ttf"
+        android:visibility="gone"
+        >
+    </com.vinsol.spree.views.CustomFontTextView>
+
+    <!-- Progress bar -->
+    <include
+        layout="@layout/progress_bar"
+        >
+    </include>
+</RelativeLayout>
