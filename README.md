@@ -22,6 +22,16 @@ Constants.java
 Strings.xml
 - For social signup / signin : add FB APP ID (create your app on https://developers.facebook.com/)
 
+## Screenshots
+
+![Dashboard](https://dl.dropboxusercontent.com/u/4338625/shopspree/Home.png "Dashboard screen")
+
+![Side Drawer](https://dl.dropboxusercontent.com/u/4338625/shopspree/Side%20drawer.png "Side drawer")
+
+![Product Listing](https://dl.dropboxusercontent.com/u/4338625/shopspree/Product%20Listing.png "Product Listing screen")
+
+![Cart](https://dl.dropboxusercontent.com/u/4338625/shopspree/Cart.png "Cart screen")
+
 ## Contributors
 - [Vaibhav Khanna](https://github.com/v4ibh4v)
 - [Alok Vaish](https://github.com/vaishalok)
@@ -42,5 +52,5 @@ See [Vaibhav Khanna](https://github.com/v4ibh4v)
 
 ## License
 
-See [LICENSE](https://github.com/vinsol/spree-android/blob/master/LICENSE.md)
+[LICENSE](https://github.com/vinsol/spree-android/blob/master/LICENSE.md)
 
