@@ -1,6 +1,7 @@
 package com.vinsol.spree.controllers.fragments;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ import com.vinsol.spree.models.User;
 import com.vinsol.spree.models.Variant;
 import com.vinsol.spree.utils.BusProvider;
 import com.vinsol.spree.utils.Common;
+import com.vinsol.spree.utils.Constants;
 import com.vinsol.spree.utils.DisplayArea;
 import com.vinsol.spree.utils.Log;
 import com.vinsol.spree.utils.SharedPreferencesHelper;
@@ -80,7 +82,7 @@ public class ProductDetailFragment extends BaseFragment {
     private RelativeLayout pbContainer;
 
     private ViewGroup parent;
-
+    private ImageView share;
     private View dataContainer;
     private TextView productName;
     private TextView price;
@@ -164,7 +166,7 @@ public class ProductDetailFragment extends BaseFragment {
         addToCart                               = (FloatingActionButton)    view.findViewById(R.id.add_to_cart);
         back                                    = (MaterialMenuView)        view.findViewById(R.id.fragment_product_detail_tab_bar_back_img);
         back.setState(MaterialMenuDrawable.IconState.ARROW);
-
+        share                   = (ImageView) view.findViewById(R.id.fragment_product_detail_tab_bar_share_img);
         productName             = (TextView)  view.findViewById(R.id.fragment_product_detail_name_text_view);
         price                   = (TextView)  view.findViewById(R.id.fragment_product_detail_item_price);
         ratingStars             =             view.findViewById(R.id.fragment_product_detail_rating_stars);
@@ -226,6 +228,19 @@ public class ProductDetailFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.product_share_subject));
+                sendIntent.putExtra(Intent.EXTRA_TITLE, productName.getText());
+                sendIntent.putExtra(Intent.EXTRA_TEXT, Constants.BASE_URL + "/products/" + productId);
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
             }
         });
     }

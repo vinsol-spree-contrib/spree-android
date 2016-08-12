@@ -56,6 +56,7 @@
     <string name="add_review">Add Review</string>
     <string name="your_rating">Your Rating</string>
     <string name="your_review">Your Review</string>
+    <string name="product_share_subject">Check this product out!</string>
     <string name="pay">Pay</string>
     <string name="select_state">Select State</string>
     <!-- Completed orders section -->

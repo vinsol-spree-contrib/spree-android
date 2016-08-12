@@ -12,6 +12,11 @@ public class Constants {
     public static final String BASE_API_URL = "YOUR SPREE BACKEND APP API URL";
 
     /////////////////////////////
+    /////////  Base URL ///////
+    /////////////////////////////
+    public static final String BASE_URL = "YOUR SPREE BACKEND APP URL";
+
+    /////////////////////////////
     /////////  about URLs ///////
     /////////////////////////////
     public static final String ABOUT_US_URL     = "ABOUT US URL";
