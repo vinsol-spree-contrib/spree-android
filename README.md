@@ -2,7 +2,7 @@
 Android application built to consume spree commerce api, is a front-end product store consumer centric
 application that facilitates listing of banners, products, cart, review/rating, social signup, user profile.
 
-It uses a customized version of [spree](https://github.com/spree/spree), link will soon be shared.
+It uses a customized version of [spree](https://github.com/spree/spree), available [here](https://github.com/vinsol-spree-contrib/shopspree-sales-app).
 
 For demo configure the following backend api url, deployed at heroku http://shop-spree.herokuapp.com/api/ams/ 
 
