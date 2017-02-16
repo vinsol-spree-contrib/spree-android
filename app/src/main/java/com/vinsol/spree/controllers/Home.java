@@ -163,9 +163,9 @@ public class Home extends AppCompatActivity implements HostActivityInterface, Ho
     }
 
     @Override
-    public void onDrawerSelectTaxonomy(String queryParam) {
+    public void onDrawerSelectTaxonomy(int queryParam) {
         closeNavigationDrawer();
-        showProductsFragment(ProductsFragment.PRODUCTS_MODE_TAXON, queryParam);
+        showProductsFragment(ProductsFragment.PRODUCTS_MODE_TAXON, String.valueOf(queryParam));
     }
 
     private void showDrawerFragment() {

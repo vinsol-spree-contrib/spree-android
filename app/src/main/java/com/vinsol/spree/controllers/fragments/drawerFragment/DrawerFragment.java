@@ -96,7 +96,7 @@ public class DrawerFragment extends BaseFragment implements DrawerActionListener
     @Override
     public void onTaxonSelected(Taxon taxon) {
         if(taxon.getChildren().size() == 0) {
-            hostActivityDrawerInterface.onDrawerSelectTaxonomy(taxon.getName());
+            hostActivityDrawerInterface.onDrawerSelectTaxonomy(taxon.getId());
         } else {
             showPage2(false, taxon);
         }

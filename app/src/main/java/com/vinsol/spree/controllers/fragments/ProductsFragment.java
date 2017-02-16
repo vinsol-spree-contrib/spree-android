@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.squareup.otto.Subscribe;
 import com.vinsol.spree.R;
 import com.vinsol.spree.api.ApiClient;
+import com.vinsol.spree.api.models.ProductsByTaxonsResponse;
 import com.vinsol.spree.api.models.ProductsResponse;
 import com.vinsol.spree.controllers.Home;
 import com.vinsol.spree.enums.ViewMode;
@@ -230,19 +231,62 @@ public class ProductsFragment extends BaseFragment {
         Call<ProductsResponse> call;
         pbContainer.setVisibility(View.VISIBLE);
         switch (mode) {
-            case PRODUCTS_MODE_BANNER : call = ApiClient.getInstance().getApiService().getAllProducts();
+            case PRODUCTS_MODE_BANNER :
+                loadAllProductsData();
                 break;
-            case PRODUCTS_MODE_TAXON  : call = ApiClient.getInstance().getApiService().getProductsByTaxons(queryParam);
+            case PRODUCTS_MODE_TAXON  :
+                loadProductsByTaxonData();
                 break;
-            default: call = ApiClient.getInstance().getApiService().getAllProducts();
+            default:
+                // do nothing
         }
+    }
 
+    private void loadAllProductsData() {
+        Call<ProductsResponse> call;
+        pbContainer.setVisibility(View.VISIBLE);
+        call = ApiClient.getInstance().getApiService().getAllProducts();
         call.enqueue(new Callback<ProductsResponse>() {
             @Override
             public void onResponse(Response<ProductsResponse> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
                     pbContainer.setVisibility(View.GONE);
                     ProductsResponse productsResponse = response.body();
+                    products = productsResponse.getProducts();
+//                    filters = productsResponse.getFilters();
+                    if (products.isEmpty()) {
+                        Toast.makeText(home, "No products found", Toast.LENGTH_LONG).show();
+                    } else {
+                        dataReceived = true;
+                        setupView();
+                    }
+                } else {
+                    pbContainer.setVisibility(View.GONE);
+                    handleError(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                pbContainer.setVisibility(View.GONE);
+                //Log.d(t.getLocalizedMessage());
+                handleError("Products load failed!");
+            }
+        });
+    }
+
+    private void loadProductsByTaxonData() {
+        Call<ProductsByTaxonsResponse> call;
+        pbContainer.setVisibility(View.VISIBLE);
+        List<String> taxonNames = new ArrayList<>();
+        taxonNames.add(queryParam);
+        call = ApiClient.getInstance().getApiService().getProductsByTaxons(taxonNames);
+        call.enqueue(new Callback<ProductsByTaxonsResponse>() {
+            @Override
+            public void onResponse(Response<ProductsByTaxonsResponse> response, Retrofit retrofit) {
+                if (response.isSuccess()) {
+                    pbContainer.setVisibility(View.GONE);
+                    ProductsByTaxonsResponse productsResponse = response.body();
                     products = productsResponse.getProducts();
 //                    filters = productsResponse.getFilters();
                     if (products.isEmpty()) {

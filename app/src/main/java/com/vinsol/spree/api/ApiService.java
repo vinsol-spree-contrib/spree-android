@@ -7,6 +7,7 @@ import com.vinsol.spree.api.models.OrderWrapper;
 import com.vinsol.spree.api.models.OrdersResponse;
 import com.vinsol.spree.api.models.PasswordResetResponse;
 import com.vinsol.spree.api.models.ProductWrapper;
+import com.vinsol.spree.api.models.ProductsByTaxonsResponse;
 import com.vinsol.spree.api.models.ProductsResponse;
 import com.vinsol.spree.api.models.ReviewWrapper;
 import com.vinsol.spree.api.models.TaxonomiesResponse;
@@ -43,8 +44,8 @@ public interface ApiService {
 	Call<ProductsResponse> getAllProducts();
 
 	//get products in a particular category of the next pages in the trip list.
-	@GET("products")
-	Call<ProductsResponse> getProductsByTaxons(@Query("q[taxons_name_in]") String taxonName);
+	@GET("search")
+	Call<ProductsByTaxonsResponse> getProductsByTaxons(@Query("taxons[]") List<String> taxonNames);
 
 	// Get the list of all the taxonomies
 	@GET("taxonomies")
