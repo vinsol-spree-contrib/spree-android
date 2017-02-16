@@ -16,19 +16,20 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.balysv.materialmenu.MaterialMenuView;
 import com.squareup.otto.Subscribe;
 import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
+import com.stripe.android.exception.AuthenticationException;
 import com.stripe.android.model.Token;
-import com.stripe.exception.AuthenticationException;
 import com.vinsol.spree.R;
 import com.vinsol.spree.api.ApiClient;
 import com.vinsol.spree.api.models.CardWrapper;
+import com.vinsol.spree.controllers.Home;
 import com.vinsol.spree.events.CardsListOptionClickEvent;
 import com.vinsol.spree.events.CheckoutCardSelectedEvent;
-import com.vinsol.spree.controllers.Home;
 import com.vinsol.spree.models.Card;
 import com.vinsol.spree.utils.BusProvider;
 import com.vinsol.spree.utils.Common;
@@ -39,6 +40,7 @@ import com.vinsol.spree.viewhelpers.CardsCustomAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.Response;
