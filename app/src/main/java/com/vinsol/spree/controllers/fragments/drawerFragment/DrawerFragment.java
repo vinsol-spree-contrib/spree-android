@@ -155,9 +155,6 @@ public class DrawerFragment extends BaseFragment implements DrawerActionListener
     }
 
     private void setup(ArrayList<Taxonomy> taxonomies) {
-        taxonomies.remove(3);
-        taxonomies.remove(2);
-
         taxons.clear();
         for(Taxonomy taxonomy : taxonomies) {
             taxons.add(taxonomy.getRootTaxon());
