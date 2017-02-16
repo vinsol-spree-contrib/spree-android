@@ -68,7 +68,7 @@ public class ProductsFragment extends BaseFragment {
     private final int VIEW_MODE_CARD = 2;
     private int viewMode = VIEW_MODE_LIST;
     private List<Product> products;
-    private List<Filter> filters;
+//    private List<Filter> filters;
     private List<Filter> selectedFilters = new ArrayList<>();
     private int mode;
     private String queryParam;
@@ -197,7 +197,7 @@ public class ProductsFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!dataReceived) return;
-                home.showFiltersFragment((ArrayList<Filter>) filters, (ArrayList<Filter>) selectedFilters);
+//                home.showFiltersFragment((ArrayList<Filter>) filters, (ArrayList<Filter>) selectedFilters);
             }
         });
     }
@@ -244,7 +244,7 @@ public class ProductsFragment extends BaseFragment {
                     pbContainer.setVisibility(View.GONE);
                     ProductsResponse productsResponse = response.body();
                     products = productsResponse.getProducts();
-                    filters = productsResponse.getFilters();
+//                    filters = productsResponse.getFilters();
                     if (products.isEmpty()) {
                         Toast.makeText(home, "No products found", Toast.LENGTH_LONG).show();
                     } else {
@@ -410,7 +410,7 @@ public class ProductsFragment extends BaseFragment {
                 ProductsResponse productsResponse = new Gson().fromJson(result, ProductsResponse.class);
                 dataReceived = true;
                 products = productsResponse.getProducts();
-                filters = productsResponse.getFilters();
+//                filters = productsResponse.getFilters();
                 setupView();
                 if (products.isEmpty()) {
                     Toast.makeText(home, "No products found", Toast.LENGTH_LONG).show();
