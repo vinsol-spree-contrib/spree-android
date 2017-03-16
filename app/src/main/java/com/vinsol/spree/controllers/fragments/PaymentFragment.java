@@ -339,7 +339,7 @@ public class PaymentFragment extends BaseFragment {
     private void addCardToStripe() {
         showLoader();
         try {
-            Stripe stripe = new Stripe(Constants.STRIPE_APP_KEY);
+            Stripe stripe = new Stripe(home, Constants.STRIPE_APP_KEY);
             stripe.createToken(stripeCard, new TokenCallback() {
                 @Override
                 public void onError(Exception error) {
