@@ -22,7 +22,6 @@ import com.balysv.materialmenu.MaterialMenuView;
 import com.squareup.otto.Subscribe;
 import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
-import com.stripe.android.exception.AuthenticationException;
 import com.stripe.android.model.Token;
 import com.vinsol.spree.R;
 import com.vinsol.spree.api.ApiClient;
@@ -338,26 +337,22 @@ public class PaymentFragment extends BaseFragment {
 
     private void addCardToStripe() {
         showLoader();
-        try {
-            Stripe stripe = new Stripe(home, Constants.STRIPE_APP_KEY);
-            stripe.createToken(stripeCard, new TokenCallback() {
-                @Override
-                public void onError(Exception error) {
-                    hideLoader();
-                    handleError(error.getLocalizedMessage());
-                }
+        Stripe stripe = new Stripe(home, Constants.STRIPE_APP_KEY);
+        stripe.createToken(stripeCard, new TokenCallback() {
+            @Override
+            public void onError(Exception error) {
+                hideLoader();
+                handleError(error.getLocalizedMessage());
+            }
 
-                @Override
-                public void onSuccess(Token token) {
-                    hideLoader();
-                    card.setStripeTokenId(token.getId());
-                    Log.d("Stripe token : " + token.getId());
-                    addCard();
-                }
-            });
-        } catch (AuthenticationException e) {
-            e.printStackTrace();
-        }
+            @Override
+            public void onSuccess(Token token) {
+                hideLoader();
+                card.setStripeTokenId(token.getId());
+                Log.d("Stripe token : " + token.getId());
+                addCard();
+            }
+        });
     }
 
     private void addCard() {
