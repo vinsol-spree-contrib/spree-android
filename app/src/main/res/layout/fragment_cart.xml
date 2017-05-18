@@ -115,6 +115,8 @@
         >
         <include
             layout="@layout/cart_address_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/fragment_cart_address_card"
             >
         </include>
@@ -152,6 +154,8 @@
         >
         <include
             layout="@layout/cart_payment_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/fragment_cart_payment_card"
             >
         </include>
