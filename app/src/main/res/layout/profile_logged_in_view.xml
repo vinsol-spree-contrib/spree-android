@@ -81,6 +81,8 @@
                 <android.support.v7.widget.CardView
                     style="@style/CardView"
                     android:id="@+id/profile_user_orders_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_20dp"
                     custom:cardElevation="1dp"
                     >
@@ -103,6 +105,8 @@
                 <android.support.v7.widget.CardView
                     style="@style/CardView"
                     android:id="@+id/profile_user_addresses_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_10dp"
                     custom:cardElevation="1dp"
                     >
@@ -125,6 +129,8 @@
                 <android.support.v7.widget.CardView
                     style="@style/CardView"
                     android:id="@+id/profile_user_payment_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_10dp"
                     custom:cardElevation="1dp"
                     >
@@ -147,6 +153,8 @@
                 <android.support.v7.widget.CardView
                     style="@style/CardView"
                     android:id="@+id/profile_user_wishlist_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_10dp"
                     android:layout_marginBottom="@dimen/margin_10dp"
                     custom:cardElevation="1dp"

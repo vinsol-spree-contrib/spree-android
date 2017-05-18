@@ -10,6 +10,8 @@
     <android.support.v7.widget.CardView
         android:id="@+id/line_items_list_view_item_container"
         style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         >
         <RelativeLayout
             android:layout_width="match_parent"
