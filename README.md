@@ -24,13 +24,13 @@ Strings.xml
 
 ## Screenshots
 
-![Dashboard](https://dl.dropboxusercontent.com/u/4338625/shopspree/Home.png "Dashboard screen")
+![Dashboard](https://raw.githubusercontent.com/vinsol-spree-contrib/spree-android/master/screenshots/Dashbaord.png "Dashboard screen")
 
-![Side Drawer](https://dl.dropboxusercontent.com/u/4338625/shopspree/Side%20drawer.png "Side drawer")
+![Side Drawer](https://raw.githubusercontent.com/vinsol-spree-contrib/spree-android/master/screenshots/SideDrawer.png "Side drawer")
 
-![Product Listing](https://dl.dropboxusercontent.com/u/4338625/shopspree/Product%20Listing.png "Product Listing screen")
+![Product Listing](https://raw.githubusercontent.com/vinsol-spree-contrib/spree-android/master/screenshots/ProductListing.png "Product Listing screen")
 
-![Cart](https://dl.dropboxusercontent.com/u/4338625/shopspree/Cart.png "Cart screen")
+![Cart](https://raw.githubusercontent.com/vinsol-spree-contrib/spree-android/master/screenshots/Cart.png "Cart screen")
 
 ## Contributors
 - [Vaibhav Khanna](https://github.com/v4ibh4v)
