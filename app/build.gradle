@@ -44,5 +44,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:8.3.0'
     compile 'org.parceler:parceler-api:1.0.4'
     provided 'org.parceler:parceler:1.0.4'
-    compile 'com.stripe:stripe-android:+'
+    compile 'com.stripe:stripe-android:4.1.3'
 }
